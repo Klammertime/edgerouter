@@ -1,21 +1,21 @@
 /**
- * EdgeRouter Express Integration Example
+ * GPTRouter Express Integration Example
  * Demonstrates usage with Express.js web framework
  */
 
 const express = require('express');
-const EdgeRouter = require('../dist').default;
+const GPTRouter = require('../dist').default;
 
 // Note: This example requires express to be installed
 // Run: npm install express
 
 async function main() {
-  console.log('EdgeRouter Express Integration Example');
+  console.log('GPTRouter Express Integration Example');
   console.log('='.repeat(40));
   console.log('\nStarting Express server...');
 
   const app = express();
-  const router = new EdgeRouter({
+  const router = new GPTRouter({
     strategy: 'balanced',
     dailyBudget: 10.00,
     debug: false
@@ -30,7 +30,7 @@ async function main() {
   // Additional custom route
   app.get('/', (req, res) => {
     res.json({
-      service: 'EdgeRouter API',
+      service: 'GPTRouter API',
       endpoints: {
         chat: 'POST /chat',
         dashboard: 'GET /dashboard'
@@ -71,7 +71,7 @@ try {
   console.log('This example requires Express.js');
   console.log('Please run: npm install express');
   console.log('\nAlternatively, you can test the middleware functionality directly:');
-  console.log('\nconst EdgeRouter = require(\'edgerouter\');');
-  console.log('const router = new EdgeRouter({ strategy: \'balanced\' });');
+  console.log('\nconst GPTRouter = require(\'gptrouter\');');
+  console.log('const router = new GPTRouter({ strategy: \'balanced\' });');
   console.log('app.use(router.middleware());');
 }

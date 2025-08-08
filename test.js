@@ -1,8 +1,8 @@
 /**
- * EdgeRouter Advanced Test Suite
+ * GPTRouter Advanced Test Suite
  */
 
-const EdgeRouter = require('./dist/index.js').default;
+const GPTRouter = require('./dist/index.js').default;
 
 async function testStrategies() {
   console.log('\n🎯 Testing Routing Strategies\n');
@@ -11,17 +11,17 @@ async function testStrategies() {
   const messages = [{ role: 'user', content: 'Test message' }];
   
   // Test cheapest strategy
-  const cheapRouter = new EdgeRouter({ strategy: 'cheapest', debug: true });
+  const cheapRouter = new GPTRouter({ strategy: 'cheapest', debug: true });
   const cheapResponse = await cheapRouter.route({ messages });
   console.log('\nCheapest:', cheapResponse.routing.provider, `($${cheapResponse.routing.cost})`);
   
   // Test fastest strategy
-  const fastRouter = new EdgeRouter({ strategy: 'fastest', debug: true });
+  const fastRouter = new GPTRouter({ strategy: 'fastest', debug: true });
   const fastResponse = await fastRouter.route({ messages });
   console.log('Fastest:', fastResponse.routing.provider, `(${fastResponse.routing.latency}ms)`);
   
   // Test balanced strategy
-  const balancedRouter = new EdgeRouter({ strategy: 'balanced', debug: true });
+  const balancedRouter = new GPTRouter({ strategy: 'balanced', debug: true });
   const balancedResponse = await balancedRouter.route({ messages });
   console.log('Balanced:', balancedResponse.routing.provider);
 }
@@ -30,7 +30,7 @@ async function testBudgetManagement() {
   console.log('\n💰 Testing Budget Management\n');
   console.log('=' .repeat(40));
   
-  const router = new EdgeRouter({
+  const router = new GPTRouter({
     strategy: 'balanced',
     dailyBudget: 0.001, // Very low for testing
     debug: true
@@ -52,7 +52,7 @@ async function testPrivacyDetection() {
   console.log('\n🔒 Testing Privacy Detection\n');
   console.log('=' .repeat(40));
   
-  const router = new EdgeRouter({ strategy: 'cheapest', debug: true });
+  const router = new GPTRouter({ strategy: 'cheapest', debug: true });
   
   // Test various sensitive content
   const testCases = [
@@ -75,7 +75,7 @@ async function testAnalytics() {
   console.log('\n📊 Testing Analytics\n');
   console.log('=' .repeat(40));
   
-  const router = new EdgeRouter({
+  const router = new GPTRouter({
     strategy: 'balanced',
     dailyBudget: 10.00
   });
@@ -98,7 +98,7 @@ async function testAnalytics() {
 }
 
 async function main() {
-  console.log('🧪 EdgeRouter Advanced Test Suite\n');
+  console.log('🧪 GPTRouter Advanced Test Suite\n');
   
   await testStrategies();
   await testBudgetManagement();
@@ -109,7 +109,7 @@ async function main() {
   console.log('✅ All tests completed!\n');
   
   console.log('💡 Key Insights:');
-  console.log('• EdgeRouter saves 90%+ on AI costs');
+  console.log('• GPTRouter saves 90%+ on AI costs');
   console.log('• Automatic failover ensures 100% uptime');
   console.log('• Sensitive data never leaves your infrastructure');
   console.log('• Built-in analytics track spending in real-time');

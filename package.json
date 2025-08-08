@@ -1,7 +1,7 @@
 {
-  "name": "edgerouter",
+  "name": "gptrouter",
   "version": "0.1.0",
-  "description": "Intelligent routing layer for multiple AI providers",
+  "description": "Intelligent routing for GPT models - automatically choose between GPT-5, GPT-4, Claude, local models and more based on cost, speed, and privacy",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [

@@ -1,16 +1,16 @@
 /**
- * Basic EdgeRouter Example
+ * Basic GPTRouter Example
  * Demonstrates core functionality
  */
 
-const EdgeRouter = require('../dist').default;
+const GPTRouter = require('../dist').default;
 
 async function main() {
-  console.log('EdgeRouter Basic Example\n');
+  console.log('GPTRouter Basic Example\n');
   console.log('='.repeat(40));
 
   // Create router with balanced strategy
-  const router = new EdgeRouter({
+  const router = new GPTRouter({
     strategy: 'balanced',
     debug: true
   });

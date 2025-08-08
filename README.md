@@ -1,19 +1,21 @@
-# edgerouter
+# gptrouter
 
-Intelligent routing layer for multiple AI providers. Automatically routes requests based on cost, latency, privacy requirements, and provider availability.
+Intelligent routing for GPT models - automatically choose between GPT-5, GPT-4, Claude, local models and more based on cost, speed, and privacy.
+
+With GPT-5 and GPT-OSS now available, intelligently route between local and cloud models.
 
 ## Installation
 
 ```bash
-npm install edgerouter
+npm install gptrouter
 ```
 
 ## Quick Start
 
 ```javascript
-const EdgeRouter = require('edgerouter');
+const GPTRouter = require('gptrouter');
 
-const router = new EdgeRouter({
+const router = new GPTRouter({
   strategy: 'balanced' // or 'cheapest', 'fastest', 'privacy-first'
 });
 
@@ -42,7 +44,7 @@ const response = await router.route({
 ## Configuration
 
 ```javascript
-const router = new EdgeRouter({
+const router = new GPTRouter({
   strategy: 'balanced',
   dailyBudget: 10.00,
   monthlyBudget: 200.00,

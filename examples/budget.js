@@ -1,16 +1,16 @@
 /**
- * EdgeRouter Budget Management Example
+ * GPTRouter Budget Management Example
  * Demonstrates cost control features
  */
 
-const EdgeRouter = require('../dist').default;
+const GPTRouter = require('../dist').default;
 
 async function main() {
-  console.log('EdgeRouter Budget Management Example');
+  console.log('GPTRouter Budget Management Example');
   console.log('='.repeat(40));
 
   // Create router with strict budget limits
-  const router = new EdgeRouter({
+  const router = new GPTRouter({
     strategy: 'balanced',
     dailyBudget: 0.01,    // $0.01 daily limit for demo
     monthlyBudget: 0.30,   // $0.30 monthly limit

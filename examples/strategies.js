@@ -1,15 +1,15 @@
 /**
- * EdgeRouter Strategy Examples
+ * GPTRouter Strategy Examples
  * Demonstrates different routing strategies
  */
 
-const EdgeRouter = require('../dist').default;
+const GPTRouter = require('../dist').default;
 
 async function testStrategy(strategy, description) {
   console.log(`\n${strategy.toUpperCase()} Strategy: ${description}`);
   console.log('-'.repeat(40));
 
-  const router = new EdgeRouter({
+  const router = new GPTRouter({
     strategy,
     debug: false
   });
@@ -27,7 +27,7 @@ async function testStrategy(strategy, description) {
 }
 
 async function main() {
-  console.log('EdgeRouter Strategy Comparison');
+  console.log('GPTRouter Strategy Comparison');
   console.log('='.repeat(40));
 
   await testStrategy('cheapest', 'Minimize cost per request');

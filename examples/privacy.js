@@ -1,12 +1,12 @@
 /**
- * EdgeRouter Privacy Protection Example
+ * GPTRouter Privacy Protection Example
  * Demonstrates automatic sensitive content detection and routing
  */
 
-const EdgeRouter = require('../dist').default;
+const GPTRouter = require('../dist').default;
 
 async function testPrivacy(content, description) {
-  const router = new EdgeRouter({
+  const router = new GPTRouter({
     strategy: 'cheapest',  // Even with cheapest, sensitive data goes local
     debug: true
   });
@@ -25,7 +25,7 @@ async function testPrivacy(content, description) {
 }
 
 async function main() {
-  console.log('EdgeRouter Privacy Protection Example');
+  console.log('GPTRouter Privacy Protection Example');
   console.log('='.repeat(40));
   console.log('\nTesting sensitive content detection...');
 

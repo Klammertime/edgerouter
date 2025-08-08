@@ -1,5 +1,6 @@
 /**
- * EdgeRouter - Intelligent routing layer for multiple AI providers
+ * GPTRouter - Intelligent routing for GPT models
+ * Automatically choose between GPT-5, GPT-4, Claude, local models and more
  */
 
 export interface Message {
@@ -81,7 +82,7 @@ export interface Analytics {
   };
 }
 
-class EdgeRouter {
+class GPTRouter {
   private providers: Map<string, Provider>;
   private strategy: Strategy;
   private dailyBudget: number;
@@ -200,7 +201,7 @@ class EdgeRouter {
     const isSensitive = this.detectSensitive(request.messages);
     
     if (this.debug) {
-      console.log(`[EdgeRouter] Sensitive content detected: ${isSensitive}`);
+      console.log(`[GPTRouter] Sensitive content detected: ${isSensitive}`);
     }
     
     // Get available providers
@@ -217,7 +218,7 @@ class EdgeRouter {
     const provider = this.selectProvider(withinBudget.length > 0 ? withinBudget : available, isSensitive);
     
     if (this.debug) {
-      console.log(`[EdgeRouter] Selected provider: ${provider.name} (${this.strategy})`);
+      console.log(`[GPTRouter] Selected provider: ${provider.name} (${this.strategy}`);
     }
     
     // Make request (mock for now)
@@ -387,7 +388,7 @@ class EdgeRouter {
       provider.available = Math.random() > 0.1;
       
       if (this.debug && !provider.available) {
-        console.log(`[EdgeRouter] Provider ${provider.name} marked as unhealthy`);
+        console.log(`[GPTRouter] Provider ${provider.name} marked as unhealthy`);
       }
     }
   }
@@ -458,7 +459,7 @@ class EdgeRouter {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EdgeRouter Analytics Dashboard</title>
+    <title>GPTRouter Analytics Dashboard</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
@@ -544,7 +545,7 @@ class EdgeRouter {
 </head>
 <body>
     <div class="container">
-        <h1>EdgeRouter Analytics</h1>
+        <h1>GPTRouter Analytics</h1>
         
         <div class="grid">
             <div class="card">
@@ -631,5 +632,5 @@ class EdgeRouter {
   }
 }
 
-export default EdgeRouter;
-export { EdgeRouter };
+export default GPTRouter;
+export { GPTRouter };
