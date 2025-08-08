@@ -1,0 +1,22 @@
+{
+  "name": "edgerouter",
+  "version": "0.1.0",
+  "description": "Intelligent AI router - routes requests to optimal providers based on content",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "ai",
+    "router",
+    "privacy",
+    "openai",
+    "cloudflare",
+    "local"
+  ],
+  "author": "Klammertime",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
