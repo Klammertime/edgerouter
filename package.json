@@ -1,22 +1,42 @@
 {
   "name": "edgerouter",
   "version": "0.1.0",
-  "description": "Intelligent AI router - routes requests to optimal providers based on content",
-  "main": "index.js",
+  "description": "Intelligent routing layer for multiple AI providers",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "scripts": {
-    "test": "node test.js"
+    "build": "tsc",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && node test.js",
+    "example": "npm run build && node examples/basic.js",
+    "clean": "rm -rf dist"
   },
   "keywords": [
     "ai",
     "router",
-    "privacy",
+    "llm",
     "openai",
+    "anthropic",
     "cloudflare",
-    "local"
+    "groq",
+    "privacy",
+    "cost-optimization",
+    "failover",
+    "load-balancing"
   ],
   "author": "Klammertime",
   "license": "MIT",
   "engines": {
     "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.2.0",
+    "typescript": "^5.9.2"
   }
 }

@@ -1,9 +1,31 @@
+# Dependencies
 node_modules/
+
+# Build output
+dist/
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Logs
+*.log
 npm-debug.log*
-.DS_Store
+
+# Environment variables
 .env
 .env.local
-*.log
-coverage/
+
+# IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+.DS_Store
+
+# Test coverage
+coverage/
+.nyc_output/
+
+# Temporary files
+tmp/
+temp/

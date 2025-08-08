@@ -2,7 +2,7 @@
  * EdgeRouter Advanced Test Suite
  */
 
-const EdgeRouter = require('./index.js');
+const EdgeRouter = require('./dist/index.js').default;
 
 async function testStrategies() {
   console.log('\n🎯 Testing Routing Strategies\n');
